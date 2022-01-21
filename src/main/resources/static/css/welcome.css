@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,600&display=swap");
+
+/* Base Styling */
+/* For universal selector*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.6%; /* eq to 10px */
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.6rem; /* 1.6*10 = 16px */
+    color: white; /* Do this while styling li*/
+}
+
+/* h1,h2, p{
+    margin: 1.6rem 0;
+} */
+
+h1 {
+    font-weight: 800;
+    font-size: 3.6rem;
+    margin: 1.6rem 0;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 2.4rem;
+    margin: 1.6rem 0;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 1.6rem 0;
+}
+
+img {
+    width: 100%;
+    height: auto; /* makes the image become responsive */
+}
+
+/* Utility class */
+
+.row {
+    /* this to layout my content horizontally by default */
+    display: flex;
+    justify-content: space-between; /* Will work on the content of the row */
+    width: 80%;
+    align-items: center; /* Aligns the content of the .row centrally vertically */
+    margin: auto; /* Allows for the .row to be at the center cos of the 80% width */
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* Hero section */
+
+header {
+    height: 100vh; /* Takes enter viewport height */
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url('../images/welcome.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover; /* even if you zoom, the image will still cover the etire page */
+    background-position: center;
+    color: white;
+}
+
+.logo h1 {
+    font-size: 5.2rem;
+    color: #1877f2;
+    margin: 0;
+}
+
+nav {
+    padding: 2% 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav box-icon {
+    display: none;
+}
+
+/* do this later after you might have added the box-icon */
+/* Consider the media query for nav */
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 2.5rem;
+}
+
+nav ul li a:hover {
+    color: #1877f2;
+    transition: 0.5s ease-in-out;
+}
+
+.header-content {
+    width: 50%;
+    position: relative;
+    /* Absolulte takes element out of normal document flow */
+    top: 13%;
+    left: 8%;
+}
+
+.header-content h1 {
+    font-size: 5.5rem;
+}
+
+.header-content p {
+    color: #1877f2;
+    font-weight: bolder;
+}
+
+form {
+    margin: 2.4rem 0;
+}
+
+input {
+    font-size: 1.8rem;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 1.2rem 0;
+    display: block;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    width: 50%;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+input::placeholder {
+    font-size: 1.3rem;
+    color: #ccc;
+}
+
+/* About Section */
+.about-left,
+.about-middle,
+.about-right {
+    flex-basis: 30%;
+    padding: 1.6rem;
+}
+
+.btn {
+    background-color: #1877f2;
+    color: #fff;
+    padding: 8px 16px;
+    display: inline-block;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* About 2 */
+.about2 {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.about2 .card {
+    padding: 3rem 8rem;
+    color: #222;
+    background-color: #dcdcdc;
+    margin: 1.6rem;
+    text-align: center;
+}
+
+/* Progress Section */
+
+.process .row {
+    justify-content: center;
+}
+
+.process-content {
+    margin-top: 100px;
+}
+
+.progress-bar { /* For the line on which the small circle would stay */
+    width: 80%;
+    height: 2px;
+    background-color: #222;
+    margin: auto;
+    position: relative; /* We will position the circle on top */
+}
+
+.progress-bar .c1,
+.progress-bar .c2,
+.progress-bar .c3 {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #222;
+    position: absolute;
+}
+
+.progress-bar .c1 {
+    top: -8px;
+    left: 50px;
+}
+
+.progress-bar .c2 {
+    top: -8px;
+    left: 50%;
+}
+
+.progress-bar .c3 {
+    top: -8px;
+    right: 50px;
+}
+
+.box1,
+.box2,
+.box3 {
+    padding: 1.8rem;
+}
+
+.process .box2 {
+    text-align: center;
+}
+
+.process .box3 {
+    text-align: right;
+}
+
+.process-content h2 {
+    color: #4CAF50;
+}
+
+/* Testimony */
+
+.testimony {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.testimony .test {
+    background-color: #505050;
+    padding: 4rem 8rem;
+    margin: 0 1rem;
+}
+
+.testimony .image {
+    height: 150px;
+    width: 150px;
+}
+
+.testimony img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Contact */
+.contact .row {
+    justify-content: center;
+}
+
+.contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact form input {
+    width: 50%;
+}
+
+.contact textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    font-size: 1.3rem;
+    resize: none;
+    color: #ccc;
+    margin: 1.2rem 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Footer */
+footer {
+    height: 80px;
+    background-color: #222;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+}
+
+
+/* Media query */
+
+@media only screen and (max-width: 760px) {
+    .row {
+        flex-direction: column;
+    }
+
+    header {
+        height: 210vh;
+    }
+
+    .header-content h1 {
+        margin-left: 5rem;
+    }
+
+    .about {
+        padding: 50px 0;
+    }
+
+    .about a {
+        margin-left: 15rem;
+    }
+
+    .process h1 {
+        text-align: center;
+    }
+
+    /* .process .box1,
+    .process .box1,
+    .process .box1{
+      text-align: center;
+    } */
+    .process-content h2, p {
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        position: relative;
+    }
+
+    nav box-icon {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 20px;
+    }
+
+    nav ul {
+        display: none;
+        background-color: white;
+
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        color: #222;
+    }
+
+    .header-content {
+        width: 100%;
+        top: 16%;
+        left: 0;
+        padding: 0 8px;
+    }
+
+    .about2-left {
+        text-align: center;
+    }
+
+    .about h2 {
+        text-align: center;
+        display: block;
+    }
+
+
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"] {
+        width: 80%;
+        display: block;
+        margin: 1.2rem auto;
+    }
+
+    .progress-bar {
+        display: none;
+    }
+
+    .process-content {
+        margin-top: 20px;
+    }
+
+    .testimony .test {
+        display: inline-block;
+        margin: 1.6rem 0;
+        text-align: center;
+
+    }
+
+    .test .image {
+        margin: 1.2rem auto;
+    }
+
+    .contact form input,
+    .contact textarea {
+        width: 100%;
+    }
+
+
+}

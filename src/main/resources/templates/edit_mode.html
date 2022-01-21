@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" th:href="@{/images/facebook-logo.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css}"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link th:href="@{/css/home.css}" rel="stylesheet">
+    <link th:href="@{/css/comment.css}" rel="stylesheet">
+<!--    <link th:href="@{home.html}" rel="import" />-->
+    <title>facebook</title>
+</head>
+<body>
+
+
+
+
+<script>
+    function editOpenForm() {
+        // document.getElementById("editPopupForm").style.display = "block";
+    }
+
+    document.addEventListener("DOMContentLoaded", function (event){
+        document.getElementById("editPopupForm").style.display = "block";
+    });
+
+    function editCloseForm() {
+        document.getElementById("editPopupForm").style.display = "none";
+        // window.location = "localhost:8082/home";
+    }
+</script>
+
+<!--Popup for edit start-->
+<div class="editPopup">
+    <div class="editFormPopup" id="editPopupForm">
+        <form id="editSubmission" class="editFormContainer" th:action="@{/home/pmessage/{postId}(postId=${postData.postId})}" th:object = "${postData}" method="POST">
+            <!--        <form action="" id="editSubmission" class="editFormContainer" method="post">-->
+            <h2>Edit post</h2>
+            <!-- <label for="psw">
+              <strong>choose photo</strong>
+            </label> -->
+
+            <!--            <input type="text" id="myFile" name="filename" required>-->
+            <textarea form="editSubmission" class="text-area" th:field = "*{postBody}" required><p ></p></textarea>
+            <button type="submit" class="btn">Post</button>
+            <a th:href="@{/home}"> <button type="button" class="btn cancel" onclick="editCloseForm()">Cancel</button></a>
+        </form>
+    </div>
+</div>
+
+<!--                        Popup for edit ends -->
+
+
+<div th:insert="home :: #whole-body"></div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up </title>
+    <link th:href="@{/css/register.css}" rel="stylesheet">
+</head>
+<body>
+
+<div th:if="${session.error}">
+    <p th:text="${session.error}" style="color: red"></p>
+</div>
+
+<div class="brand"><h1>facebook</h1></div>
+<div class="wrapper">
+    <div class="title">
+        Create an account
+        <p>It's quick and easy</p>
+    </div>
+
+    <form th:action="@{/add}" th:object = "${user}" method="POST">
+        <div class="names">
+            <div class="names-field">
+                <input type="text" th:field = "*{firstName}" placeholder="First Name" name="firstName" required>
+                <!-- <label for="">First Name</label> -->
+            </div>
+
+            <div class="names-field">
+                <input type="text" th:field = "*{lastName}" placeholder="Last Name" name="lastName" required>
+                <!-- <label for="">Last Name</label> -->
+            </div>
+        </div>
+
+
+        <div class="field">
+            <input type="text" th:field = "*{email}" placeholder="email address" name="email" required>
+            <!-- <label for="">Email Address</label> -->
+        </div>
+
+        <div class="field">
+            <input type="text" th:field = "*{phone}"  placeholder="Phone Number" name="phone" required>
+        </div>
+
+        <div class="names">
+            <div class="text-birth">
+                <p>Date of Birth: </p>
+                <!-- <label for="">First Name</label> -->
+            </div>
+
+            <div class="birth-field">
+                <input type="date" placeholder="Birthday" required>
+                <!-- <label for="">Last Name</label> -->
+            </div>
+        </div>
+
+        <div class="field">
+            <input type="password" th:field = "*{password}" placeholder="password" name="password" required>
+            <!-- <label for="">Password</label> -->
+        </div>
+
+        <div class="field">
+            <input type="password" placeholder="Confirm Password" required>
+            <!-- <label for="">Confirm Password</label> -->
+        </div>
+
+        <!-- <div class="names">
+             <div class="names-field">
+             <input type="text" placeholder="First Name" required>
+             <label for="">First Name</label>
+             </div>
+
+             <div class="names-field">
+             <input type="radio" >
+             <label for="">Last Name</label>
+             </div>
+         </div> -->
+
+        <div class="content">
+            <div class="checkbox">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+            <div class="pass-link">
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+        <div class="field">
+            <input type="submit" value="Sign Up">
+        </div>
+
+        <div class="signup-link">
+            <a th:href = "@{/}" > Already have a account? </a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
